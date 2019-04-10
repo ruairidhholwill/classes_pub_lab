@@ -1,6 +1,6 @@
-class Customers
+class Customer
 
-  attr_reader :name, :wallet
+  attr_accessor :name, :wallet
 
   def initialize(name, wallet)
     @name = name
@@ -11,7 +11,7 @@ class Customers
     return @wallet
   end
 
-
-
-
+  def decrease_wallet_less_drink(drink)
+    @wallet -= drink.drink_price
+  end
 end

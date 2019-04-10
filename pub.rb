@@ -16,5 +16,8 @@ class Pub
     return @drinks.count
   end
 
+  def increase_amount_in_till(drink)
+    @till += drink.drink_price
+  end
 
 end

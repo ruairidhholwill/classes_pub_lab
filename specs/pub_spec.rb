@@ -2,6 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 require_relative("../pub.rb")
 require_relative("../drinks.rb")
+require_relative("../customers.rb")
 
 class PubTest < MiniTest::Test
 
@@ -10,6 +11,7 @@ class PubTest < MiniTest::Test
     @drink2 = Drink.new("wine", 5)
     @drink3 = Drink.new("gin", 7)
     @drinks = [@drink1, @drink2, @drink3]
+    @customer1 = Customer.new("Diego", 20)
     @pub = Pub.new("Chanter", 100, @drinks)
   end
 
@@ -25,6 +27,9 @@ class PubTest < MiniTest::Test
     assert_equal(3, @drinks.count)
   end
 
-
+  def test_till_amount_increases
+    @pub.increase_amount_in_till(@drink1)
+    assert_equal(103, @pub.amount_of_money_in_till)
+  end
 
 end
