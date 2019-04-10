@@ -7,11 +7,12 @@ require_relative("../customers.rb")
 class PubTest < MiniTest::Test
 
   def setup
-    @drink1 = Drink.new("beer", 3)
-    @drink2 = Drink.new("wine", 5)
-    @drink3 = Drink.new("gin", 7)
+    @drink1 = Drink.new("beer", 3, 1)
+    @drink2 = Drink.new("wine", 5, 2)
+    @drink3 = Drink.new("gin", 7, 3)
     @drinks = [@drink1, @drink2, @drink3]
-    @customer1 = Customer.new("Diego", 20)
+    @customer1 = Customer.new("Diego", 20, 33, 8)
+    @customer2 = Customer.new("Ru", 15, 23, 11)
     @pub = Pub.new("Chanter", 100, @drinks)
   end
 
@@ -36,6 +37,16 @@ class PubTest < MiniTest::Test
     @pub.exchange_money(@pub, @customer1, @drink1)
     assert_equal(17, @customer1.amount_in_wallet)
     assert_equal(103, @pub.amount_of_money_in_till)
+  end
+
+  def test_can_customer_drink
+    result = @pub.check_customer_age(@customer1)
+    assert_equal(true, result)
+  end
+
+  def test_refuse_customer
+    result = @pub.refuse_customer(@customer2)
+    assert_equal("You have been refused", result)
   end
 
 end

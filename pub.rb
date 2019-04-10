@@ -25,4 +25,16 @@ class Pub
     pub.increase_amount_in_till(drink)
   end
 
+  def check_customer_age(customer)
+    return true if customer.can_customer_be_served
+  end
+
+  def refuse_customer(customer)
+    if customer.drunk_level <= 10
+      return "Have a drink!"
+    else
+      return "You have been refused"
+    end
+  end
+
 end
