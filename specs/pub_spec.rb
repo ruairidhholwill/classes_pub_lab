@@ -32,4 +32,10 @@ class PubTest < MiniTest::Test
     assert_equal(103, @pub.amount_of_money_in_till)
   end
 
+  def test_exchange_of_money
+    @pub.exchange_money(@pub, @customer1, @drink1)
+    assert_equal(17, @customer1.amount_in_wallet)
+    assert_equal(103, @pub.amount_of_money_in_till)
+  end
+
 end

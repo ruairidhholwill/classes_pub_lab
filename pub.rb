@@ -1,6 +1,6 @@
 class Pub
 
-  attr_reader :name, :till, :drink
+  attr_accessor :name, :till, :drink
 
   def initialize(name, till, drinks = [])
     @name = name
@@ -18,6 +18,11 @@ class Pub
 
   def increase_amount_in_till(drink)
     @till += drink.drink_price
+  end
+
+  def exchange_money(pub, customer, drink)
+    customer.decrease_wallet_less_drink(drink)
+    pub.increase_amount_in_till(drink)
   end
 
 end
