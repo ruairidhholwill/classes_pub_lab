@@ -26,6 +26,4 @@ class FoodTest < MiniTest::Test
 
 
 
-
-
 end
