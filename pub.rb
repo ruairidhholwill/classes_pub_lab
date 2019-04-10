@@ -26,7 +26,11 @@ class Pub
   end
 
   def check_customer_age(customer)
-    return true if customer.can_customer_be_served
+    if customer.can_customer_be_served
+      return "You are over 18"
+    else
+      return "You are too young.."
+    end
   end
 
   def refuse_customer(customer)

@@ -41,7 +41,7 @@ class PubTest < MiniTest::Test
 
   def test_can_customer_drink
     result = @pub.check_customer_age(@customer1)
-    assert_equal(true, result)
+    assert_equal("You are over 18", result)
   end
 
   def test_refuse_customer
