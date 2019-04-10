@@ -16,12 +16,4 @@ class Food
     return @rejuv_level
   end
 
-
-
-
-
-
-
-
-
 end

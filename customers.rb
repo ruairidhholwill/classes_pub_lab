@@ -41,5 +41,4 @@ class Customer
     return @drunk_level -= food.rejuv_level
   end
 
-
 end

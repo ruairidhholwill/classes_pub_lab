@@ -47,4 +47,5 @@ class CustomerTest < MiniTest::Test
     result = @customer1.decrease_drunk_level(@food2)
     assert_equal(7, result)
   end
+  
 end

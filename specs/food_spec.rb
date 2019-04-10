@@ -23,7 +23,5 @@ class FoodTest < MiniTest::Test
   def test_rejuv_level
     assert_equal(4, @food1.rejuv_level)
   end
-
-
-
+  
 end
